@@ -88,3 +88,21 @@ subtracao(teste1, teste2);
 multiplicacao(teste1, teste2);
 divisao(teste1, teste2);
 
+// Desafio 1
+// a)
+
+const imprime = (nome) => console.log(nome);
+
+// b)
+
+let funcao = (valor1, valor2) => { valor1 + valor2 };
+
+// Desafio 2
+
+function pitagoras(cat1, cat2)
+{ 
+   let hipotenusa = Math.sqrt((cat1 ^ 2) + (cat2 ^ 2));
+   return hipotenusa;
+}
+
+console.log(pitagoras());
