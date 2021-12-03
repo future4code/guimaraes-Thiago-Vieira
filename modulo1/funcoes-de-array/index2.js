@@ -61,4 +61,50 @@ const produtos = [
     { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
  ]
 
- 
+ //a
+
+ const apenasNome = produtos.map((item) => {
+
+    return item.nome
+
+})
+
+ //b
+
+function aplicaDesconto(item)
+{
+    return {nome: item.nome, preco: item.preco *= 0.95}
+}
+
+const desconto = produtos.map(aplicaDesconto)
+console.log(desconto);
+
+//c
+
+function somenteBebidas(item)
+{
+    return item.categoria === "Bebidas";
+}
+
+const bebidas = produtos.filter(somenteBebidas)
+console.log(bebidas);
+
+//d
+
+function somenteYpe(item)
+{
+    return item.nome === "Ypê";
+}
+
+const ype = produtos.filter(somenteYpe)
+console.log(ype);
+
+//e
+
+function frase(item)
+{
+    return "Compre " + item.nome + " por apenas " + item.preco+"."
+}
+
+const construirFrase = produtos.map(frase)
+console.log(construirFrase)
