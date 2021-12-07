@@ -1,0 +1,34 @@
+Resolvendo Problemas
+
+Os 7 passos para auxiliar na resolução de problemas são:
+
+1) Ler com atenção o enunciado:
+    - Entender o que o código deve fazer;
+    - Extrair informações únicas, esssenciais para o funcionamento do código.
+
+2) Retirar informações relevantes:
+    - Anotar palavras-chave, como nomes de variáveis
+    - Entender as ações necessárias, para a criação de funções;
+    - Entender qual a condição básica de existência do código;
+
+3) Pensar em entradas e saídas do código:
+    - Verificar quais são os requisitos do meu programa, e entender o que ele precisa que seja feito.
+    - Quais são as respostas de um possível código?
+
+4) Fazer um esquema visual:
+    - Tentar resolver o problema sem código através de um fluxograma ou desenho;
+    - Utilizar linguagem simples, de fácil entendimento;
+
+5) Criar um código "feio":
+    - Utilizar as principais características de implementação do código coletadas do texto para fazer um primeiro teste;
+    - Simplificar os nomes de variáveis, lembrando de não utilizar variáveis diferentes para armazenar os mesmos tipos de dados;
+
+6) Testar força-bruta
+    - Rodar o código pela primeira vez para entender a implementação (debug)
+    - Conferir a sintaxe do código no detalhe;
+
+7) Refatorar
+    - Implementar melhorias, otimização do código;
+    - Utilizar funções para cada etapa de execução;
+    - Verificar duração do código no caso de utilização de datas e horários;
+    
