@@ -199,6 +199,12 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 // Escreva uma função que receba um array de números e retorne um novo array com apenas 2 valores (NESTA ORDEM):
 // o segundo maior e o segundo menor número do array original.
 function retornaSegundoMaiorESegundoMenor(array) {
+
+    let newArr = array.sort(function compararNumeros(a, b) {
+        return a - b;
+      });
+
+    return [newArr[newArr.length - 2], newArr[1]];
   
 }
 
@@ -206,7 +212,9 @@ function retornaSegundoMaiorESegundoMenor(array) {
 // Crie uma função que receba um objeto representando um filme com nome, ano, diretor e elenco.
 // Ela deve retornar uma chamada para assistir a esse filme, seguindo a estrutura do exemplo abaixo:
 function retornaChamadaDeFilme(filme) {
-   
+
+    return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join(', ')}.`
+
 }
 
 // EXERCÍCIO 12
@@ -214,26 +222,121 @@ function retornaChamadaDeFilme(filme) {
 // objeto com as mesmas propriedades, mas com o valor "ANÔNIMO" para a propriedade nome.
 function retornaPessoaAnonimizada(pessoa) {
    
+let novaPessoa = {...pessoa,
+    nome: 'ANÔNIMO'
+}
+
+return novaPessoa;
+
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
    
+    // pessoas = { nome: "Paula", idade: 12, altura: 1.8},
+	// { nome: "João", idade: 20, altura: 1.3},
+	// { nome: "Pedro", idade: 15, altura: 1.9},
+	// { nome: "Luciano", idade: 22, altura: 1.8},
+	// { nome: "Artur", idade: 10, altura: 1.2},
+	// { nome: "Soter", idade: 70, altura: 1.9}
+
+    //a 
+
+    function isTallEnough(pessoas)
+    {
+        if (pessoas.altura >= 1.5 && pessoas.idade > 14 && pessoas.idade < 60)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    let autorizadas = pessoas.filter(isTallEnough);
+
+    return autorizadas;
+
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
+
+    function isntTallEnough(pessoas)
+    {
+        if (pessoas.altura < 1.5 || pessoas.idade <= 14 || pessoas.idade > 60)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    let naoAutorizadas = pessoas.filter(isntTallEnough);
+
+    return naoAutorizadas;
   
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
+    // let contas = [
+    //     { cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+    //     { cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+    //     { cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+    //     { cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+    //     { cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+    //     { cliente: "Soter", saldoTotal: 1200, compras: [] }
+    // ]
+
+    contas[0].saldoTotal = 500;
+    contas[1].saldoTotal = 6260;
+    contas[2].saldoTotal = -3340;
+    contas[3].saldoTotal = -1900;
+    contas[4].saldoTotal = 1300;
+    contas[5].saldoTotal = 1400;
+
+    contas[0].compras = [];
+    contas[1].compras = [];
+    contas[2].compras = [];
+    contas[3].compras = [];
+    contas[4].compras = [];
+    contas[5].compras = [];
+
+    return contas; 
+
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
   
+    let newObj = [];
+
+    for (var i = 0; i < consultas.length; i++)
+    {
+        newObj.push(consultas[i].nome);
+    }
+
+    newObj.sort();
+
+    let newArr = [];
+
+    for (var i = 0; i < newObj.length; i++)
+    {
+        for (var j = 0; j < consultas.length; j++)
+        {
+            if (newObj[i] === consultas[j].nome)
+            {
+                newArr.push(consultas[j]);
+            }
+        }
+    }
+    return newArr;
+
 }
 
 // EXERCÍCIO 15B
