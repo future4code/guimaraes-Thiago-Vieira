@@ -48,4 +48,5 @@ else
 {
    //fim de jogo
    console.log("O jogo acabou.")
+   
 }
