@@ -341,35 +341,5 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-
-    // let consultas = [ 
-    //     { nome: "Márcia", dataDaConsulta: "04/05/2021" },
-    //     { nome: "Pedro", dataDaConsulta: "02/07/2021" },
-    //     { nome: "João",  dataDaConsulta: "01/10/2021" },
-    //     { nome: "Paula", dataDaConsulta: "03/11/2021" } 
-    // ];
-
-    let newObj = [];
-
-    for (i = 0; i < consultas.length; i++)
-    {
-       newObj.push(consultas[i].dataDaConsulta)
-    }
-
-    newObj.sort((a, b) => a.dataDaConsulta - b.dataDaConsulta);
-
-
-    console.log(newObj);
-
-    let organizadoPorData = [];
-
-    for (var i = 0; i < newObj.length; i++)
-    {
-        consultas[i].dataDaConsulta = organizadoPorData[i];
-    }
-
-    console.log(consultas);
-
-    return newArr;
    
 }
