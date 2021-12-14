@@ -1,0 +1,6 @@
+function calculaSalario(qtdeCarrosVendidos, valorTotalVendas)
+{
+    
+   
+   
+}
