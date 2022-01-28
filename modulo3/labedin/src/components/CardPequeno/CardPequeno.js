@@ -8,7 +8,7 @@ function CardPequeno(props) {
             <div>
                 <h4>{ props.field }:&nbsp;</h4>
                 <p>{ props.value }</p>
-            </div>
+             </div>
         </div>
     )
 }
