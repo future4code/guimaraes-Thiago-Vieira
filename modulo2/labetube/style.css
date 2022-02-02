@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+@media screen and (max-width: 1000px) {
+
+    header {
+        width: 100%;
+        height: 60px;
+        float: left;
+        position: fixed;
+        overflow-y: hidden;
+    }
+
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    float: left;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 75%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search > input {
+    height: 30px;
+    width: 250px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search > button {
+    height: 30px;
+    width: 50px;
+    font-weight: bold;
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    margin-top: -60px;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 75%);
+}
+
+header > div > h1 {
+    color: rgb(241, 241, 241);
+    font-size: 26px;
+    text-shadow: black 1px 1px 1px
+}
+
+.media-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    row-gap: 30px;
+    column-gap: 170px;
+    padding: 0 10%;
+    border: 1px solid black;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    height: 600px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 275px;
+    width: 400px;
+}
+
+.card video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card .title {
+    position: relative;
+    top: 10px;
+    width: 50%;
+    left: 25%;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: lightblue;
+    box-shadow: grey 2px 2px 2px;
+}
+
+.card p {
+    text-align: center;
+    color: #fff;
+    text-shadow: black 1px 1px 1px;
+}
+
+.video {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
