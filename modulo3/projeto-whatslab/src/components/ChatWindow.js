@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ChatWindow.css';
+
+import MessageItem from './MessageItem';
 
 import SearchIcon from '@mui/icons-material/Search';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
@@ -7,8 +9,23 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import SendIcon from '@mui/icons-material/Send';
 import MicIcon from '@mui/icons-material/Mic';
+import { StylesContext } from '@material-ui/styles';
 
-export default (data) => {
+export default ({user}) => {
+    
+    const [message, setMessage] = useState([
+        {author: '' , body: 'bla bla bla'},
+        {author: '' , body: 'bla bla'},
+        {author: '' , body: 'bla'}
+    ]);
+
+    const sendMessage =  () => {
+        setMessage([...message, {
+            author: '',
+            body: ''
+        }])
+    }
+
     return (
         <div className="chatWindow">
             <div className="chatWindow-header">
@@ -32,6 +49,12 @@ export default (data) => {
 
             </div>
             <div className="chatWindow-body">
+                {message.map((message, key) => (
+                    <MessageItem
+                        key={key}
+                        data={message}
+                    />
+                ))}
 
             </div>
             <div className="chatWindow-footer">
@@ -47,11 +70,14 @@ export default (data) => {
                         className='chatWindow-input' 
                         type="text"
                         placeholder='Digite uma mensagem'
+                        required
                     />
                 </div>
                 <div className="chatWindow-pos">
                     <div className="chatWindow-btn">
-                        <SendIcon style={{color: '#919191'}} />
+                        <SendIcon 
+                        style={{color: '#919191'}} 
+                        />
                     </div>
                     <div className="chatWindow-btn">
                         <MicIcon style={{color: '#919191'}} />

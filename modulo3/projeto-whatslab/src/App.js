@@ -21,6 +21,12 @@ function App() {
         ]);
     const [activeChat, setActiveChat] = useState({});
 
+    const [user, setUser] = useState({
+        id: 1234,
+        avatar:'',
+        name: 'Thiago Vieira'
+    });
+
     return (
     <div className="App">
         <div className="sidebar">
@@ -57,7 +63,9 @@ function App() {
         </div>
         <div className="contentarea">
             {activeChat.chatId !== undefined &&
-                <ChatWindow />
+                <ChatWindow 
+                    user={user}
+                />
             }
             {activeChat.chatId === undefined &&
                 <ChatIntro />
