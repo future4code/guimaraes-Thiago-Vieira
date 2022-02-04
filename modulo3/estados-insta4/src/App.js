@@ -8,26 +8,22 @@ const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `
-
 class App extends React.Component {
+  
+  state = { 
+    posts : [
+    {nomeUsuario: 'ana', fotoUsuario: 'https://picsum.photos/50/60', fotoPost: 'https://picsum.photos/200/150'},
+    {nomeUsuario: 'thiago', fotoUsuario: 'https://picsum.photos/50/5', fotoPost: 'https://picsum.photos/200/150'},
+    {nomeUsuario: 'thalita', fotoUsuario: 'https://picsum.photos/50/5', fotoPost: 'https://picsum.photos/200/150'}
+  ]}  
+
   render() {
+
+    const novoPost = this.state.posts.map((item) => {return <Post nomeUsuario={item.nomeUsuario} fotoUsuario={item.fotoUsuario} fotoPost={item.fotoPost} />});
+
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/60'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
-        <Post
-          nomeUsuario={'thiago'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/140'}
-        />
-        <Post
-          nomeUsuario={'thalitta'}
-          fotoUsuario={'https://picsum.photos/50/40'}
-          fotoPost={'https://picsum.photos/200/130'}
-        />
+        {novoPost}
       </MainContainer>
     );
   }
