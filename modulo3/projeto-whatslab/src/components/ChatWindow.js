@@ -13,6 +13,7 @@ import { StylesContext } from '@material-ui/styles';
 
 export default ({user}) => {
     
+    const [value, setValue] = useState();
     const [message, setMessage] = useState([
         {author: '' , body: ''},
     ]);
@@ -24,7 +25,7 @@ export default ({user}) => {
             author: '',
             body: inputValue
         }])
-        
+        setValue("");
     }
     
     const getMessage = (event) => {
@@ -75,7 +76,8 @@ export default ({user}) => {
                     <input 
                         className='chatWindow-input' 
                         type="text"
-                        placeholder='Digite uma mensagem'
+                        placeholder='Digite uma mensagem...'
+                        value={value}
                         onChange={getMessage}
                         required
                     />
