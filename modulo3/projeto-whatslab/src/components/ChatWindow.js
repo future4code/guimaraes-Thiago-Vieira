@@ -14,16 +14,22 @@ import { StylesContext } from '@material-ui/styles';
 export default ({user}) => {
     
     const [message, setMessage] = useState([
-        {author: '' , body: 'bla bla bla'},
-        {author: '' , body: 'bla bla'},
-        {author: '' , body: 'bla'}
+        {author: '' , body: ''},
     ]);
 
+    let inputValue = '';
+    
     const sendMessage =  () => {
         setMessage([...message, {
             author: '',
-            body: ''
+            body: inputValue
         }])
+        
+    }
+    
+    const getMessage = (event) => {
+        inputValue = event.target.value;
+        return inputValue;
     }
 
     return (
@@ -70,13 +76,16 @@ export default ({user}) => {
                         className='chatWindow-input' 
                         type="text"
                         placeholder='Digite uma mensagem'
+                        onChange={getMessage}
                         required
                     />
                 </div>
                 <div className="chatWindow-pos">
                     <div className="chatWindow-btn">
                         <SendIcon 
-                        style={{color: '#919191'}} 
+                        style={{color: '#919191'}}
+                        onClick={sendMessage}
+                        
                         />
                     </div>
                     <div className="chatWindow-btn">
